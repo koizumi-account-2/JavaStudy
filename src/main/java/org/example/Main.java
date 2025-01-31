@@ -2,36 +2,22 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        /** byteについて**/
-        byte byteVal = 100;
-        // byteVal = 150; エラー
+        Person person1 = new Person("XXX");
+        // person2 に person1の参照を渡します
+        Person person2 = person1;
+        // person2のメンバ変数を変更します。
+        person2.name = "BBB";
+        System.out.println(person1.name);
 
-        /** shortについて**/
-        short shortVal = 32000;
-        // shortVal = 40000; エラー
-
-        /** intについて**/
-        int intVal = 123456789;
-        intVal = 012; // ８進数
-        intVal = 0xA; // １６進数
-        // intVal = 9223372036854775807; エラー
-
-        /** longについて**/
-        long longVal = 9223372036854775807L;
-
-        /** floatについて**/
-        float floatVal = 3.14f;
-
-        /** doubleについて**/
-        double doubleVal = 3.1415;
-
-        /** charについて**/
-        char letter = 'あ';
-        letter = 213;
-        char unicodeChar = '\u3042'; // あ　と同じ
-
-        /** booleanについて**/
-        boolean flg = true;
-
+        String str1 = "AAA";
+        String str2 = str1;
+        str2 = "BBB";
+        System.out.println(str1);
+    }
+}
+class Person{
+    String name;
+    Person(String name){
+        this.name = name;
     }
 }
